@@ -8,7 +8,9 @@ public class Word {
     private String mSpanishTranslation;
 
     // Drawable resource ID
-//    private int mImageResourceId;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
+
+    private static final int NO_IMAGE_PROVIDED= -1;
 
     /*
      * Create a new AndroidFlavor object.
@@ -17,11 +19,16 @@ public class Word {
      * @param vNumber is the corresponding Android version number (e.g. 2.3-2.7)
      * @param image is drawable reference ID that corresponds to the Android version
      * */
+    public Word(String DefaultTranslation, String SpanishTranslation,int imageResourceId)
+    {
+        mDefaultTranslation = DefaultTranslation;
+        mSpanishTranslation = SpanishTranslation;
+        mImageResourceId = imageResourceId;
+    }
     public Word(String DefaultTranslation, String SpanishTranslation)
     {
         mDefaultTranslation = DefaultTranslation;
         mSpanishTranslation = SpanishTranslation;
-//      mImageResourceId = imageResourceId;
     }
 
     /**
@@ -41,7 +48,11 @@ public class Word {
     /**
      * Get the image resource ID
      */
-//    public int getImageResourceId() {
-//        return mImageResourceId;
-//    }
+    public int getImageResourceId() {
+        return mImageResourceId;
+    }
+
+    public Boolean hasImage(){
+        return mImageResourceId != NO_IMAGE_PROVIDED;
+    }
 }
