@@ -18,20 +18,23 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_numbers);
 
         // Create a list of words
-        ArrayList<String> words = new ArrayList<String>();
-        words.add("one");
-        words.add("two");
-        words.add("three");
-        words.add("four");
-        words.add("five");
-        words.add("six");
-        words.add("seven");
-        words.add("eight");
-        words.add("nine");
-        words.add("ten");
+        ArrayList<Word> words = new ArrayList<Word>();
+        words.add(new Word("zero","cero"));
+        words.add(new Word("one","una"));
+        words.add(new Word("two","dos"));
+        words.add(new Word("three","tres"));
+        words.add(new Word("four","cuatro"));
+        words.add(new Word("five","cinco"));
+        words.add(new Word("six","seis"));
+        words.add(new Word("seven","seite"));
+        words.add(new Word("eight","ocho"));
+        words.add(new Word("nine","neuve"));
+        words.add(new Word("ten","diez"));
 
 
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
+
+
+        WordAdapter itemsAdapter = new WordAdapter(this, words);
 
         ListView listView = (ListView) findViewById(R.id.list);
 
