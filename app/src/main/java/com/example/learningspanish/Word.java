@@ -7,6 +7,9 @@ public class Word {
     // Android version number (e.g. 2.3-2.7, 3.0-3.2.6, 4.0-4.0.4)
     private String mSpanishTranslation;
 
+    // audio resource ID
+    private int mAudioResourceId;
+
     // Drawable resource ID
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
@@ -19,16 +22,18 @@ public class Word {
      * @param vNumber is the corresponding Android version number (e.g. 2.3-2.7)
      * @param image is drawable reference ID that corresponds to the Android version
      * */
-    public Word(String DefaultTranslation, String SpanishTranslation,int imageResourceId)
+    public Word(String DefaultTranslation, String SpanishTranslation,int imageResourceId, int AudioResourceId)
     {
         mDefaultTranslation = DefaultTranslation;
         mSpanishTranslation = SpanishTranslation;
         mImageResourceId = imageResourceId;
+        mAudioResourceId    = AudioResourceId;
     }
-    public Word(String DefaultTranslation, String SpanishTranslation)
+    public Word(String DefaultTranslation, String SpanishTranslation,int AudioResourceId)
     {
         mDefaultTranslation = DefaultTranslation;
         mSpanishTranslation = SpanishTranslation;
+        mAudioResourceId    = AudioResourceId;
     }
 
     /**
@@ -50,6 +55,13 @@ public class Word {
      */
     public int getImageResourceId() {
         return mImageResourceId;
+    }
+
+    /**
+     * Get the audio resource ID
+     */
+    public int getAudioResourceId(){
+        return mAudioResourceId;
     }
 
     public Boolean hasImage(){
