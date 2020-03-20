@@ -79,6 +79,7 @@ public class FamilyFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.word_list, container, false);
         // Create and setup the {@link AudioManager} to request audio focus
 
+
         mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
         // Create a list of words
@@ -96,7 +97,7 @@ public class FamilyFragment extends Fragment {
 
 
 
-        WordAdapter itemsAdapter = new WordAdapter(getActivity(), words, R.color.category_numbers);
+        WordAdapter itemsAdapter = new WordAdapter(getActivity(), words, R.color.category_family);
 
         ListView listView = (ListView) rootView.findViewById(R.id.list);
 
